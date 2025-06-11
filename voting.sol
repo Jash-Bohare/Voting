@@ -55,9 +55,7 @@ contract Vote {
         require(block.timestamp<=endTime && stopVoting==false,"Voting time is over");
       _;
     }
-   
-    // end time - 1720540700 - Tuesday, 9 July 2024 21:28:20
-    // current time - 1720540861 - Tuesday, 9 July 2024 21:31:01
+
    
     modifier onlyCommissioner() {
         require(msg.sender==electionCommission,"Not authuorized");
@@ -199,9 +197,4 @@ contract Vote {
     function emergencyStopVoting() public onlyCommissioner() {
        stopVoting=true;
     }
-
-
-    //if votingStatus==NotStarted then do this
-    //else if votingStatus==Started then do that
-    //else bla bla
 }
